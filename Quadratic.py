@@ -8,7 +8,7 @@ def quadratic_roots(a, b, c):
         return (-b / (2*a),)
     else:
         return None
-
+#for find roots
 if __name__ == "__main__":
     a = float(input("a: "))
     b = float(input("b: "))
