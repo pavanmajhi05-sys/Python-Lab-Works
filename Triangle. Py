@@ -1,0 +1,50 @@
+# Step 1 - Create Matrix
+def create_matrix(n):
+    matrix = []              # empty list
+
+    print("Enter matrix values:")
+    for i in range(n):
+        row = []             # empty row
+        for j in range(n):
+            val = int(input("Enter value [" 
+                  + str(i) + "][" + str(j) + "]: "))
+            row.append(val)  # add value to row
+        matrix.append(row)   # add row to matrix
+    return matrix
+
+# Step 2 - Print Original Matrix
+def print_matrix(matrix, n):
+    print("\nOriginal Matrix:")
+    for i in range(n):
+        for j in range(n):
+            print(matrix[i][j], end=" ")
+        print()
+
+# Step 3 - Print Lower Triangle
+def lower_triangle(matrix, n):
+    print("\nLower Triangle:")
+    for i in range(n):
+        for j in range(n):
+            if j <= i:           # below diagonal
+                print(matrix[i][j], end=" ")
+            else:
+                print(0, end=" ") # print 0 above
+        print()
+
+# Step 4 - Print Upper Triangle
+def upper_triangle(matrix, n):
+    print("\nUpper Triangle:")
+    for i in range(n):
+        for j in range(n):
+            if j >= i:           # above diagonal
+                print(matrix[i][j], end=" ")
+            else:
+                print(0, end=" ") # print 0 below
+        print()
+
+# Main Program
+n = int(input("Enter matrix size (n x n): "))
+matrix = create_matrix(n)
+print_matrix(matrix, n)
+lower_triangle(matrix, n)
+upper_triangle(matrix, n)
